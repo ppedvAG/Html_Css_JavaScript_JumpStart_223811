@@ -1,0 +1,82 @@
+/* 
+    Ich bin ein Kommentar 
+    Und helfe beim Beschreiben der CSS-Regel 
+*/
+
+/* gilt für alle HTML-Elemente, hier wird das Jokerzeichen '*' verwendet */
+
+
+/* Syntax:
+
+    selector {
+        attribute: value;
+        attribute2: value;
+    }
+    Universalselektor *
+        Stylt alle Elemente
+    
+    Elementsselektor p {}
+        Stylt alle entsprechende Elemente
+    Klassenselektor .klassenNamen {}
+        Stylt alle Elemente die Teil der Klasse sind
+    Idselektor #idNamen {}
+        Stylt das Element mit der entsprechenden Id
+*/
+
+/*Universalselektor * */
+* {
+    color: blue;
+    font-family: Arial, sans-serif;
+}
+
+/* Alle p-tags werden dunkel-blau */
+p {
+    color : darkorange;
+}
+
+h3 {
+    color:rgb(111, 111, 240);
+}
+
+.chapter-heading {
+    color:darkblue;
+    font-family: 'Times New Roman', serif;
+}
+
+#first-paragraph {
+    text-decoration: underline;
+    text-decoration-color: green;
+}
+
+#second-paragraph {
+    text-decoration: underline;
+    text-decoration-color: gold;
+}
+
+
+
+
+/* 
+    Advanced Selecotrs:
+    Gruppen Selector: el1, el2, el3.... {} group-selector
+    Direkte Geschwister-Selektor: el1 + el2 {} adjacent sibling selecot
+    Allgemeine Geschwister-Selektor el1 ~ el2 {} General sibling selector
+    Allgemeiner Nachfahren-Selektor el1 el2 {} General descendant selector
+        Stylt alle Nachfahren, egal wie weit sie verschachtelt sind
+    Direkte Nachfahren-Selektor el1 > el2 {} Child-Selector
+    Id/Klassen kombinieren el.Klasse {}
+                            el#id {}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+

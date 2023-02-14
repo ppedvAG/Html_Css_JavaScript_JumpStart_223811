@@ -63,13 +63,28 @@
             </li>
 
             <li>
+                <a href="#intro-chapter">Einsteieg</a>
+            </li>
+            <li>
+                <a href="#basic-output-chapter">Ausgabevarianten in HTML</a>
+            </li>
+            <li>
+                <a href="#list-chapter">Gehe zu Listen</a>
+            </li>
+            <li>
+                <a href="#table-chapter">Tabellen</a>
+            </li>
+            <li>
+                <a href="#media-chapter">Media (Foto/Videos)</a>
+            </li>
+            <li>
                 <a href="#last-chapter">Gehe zum letzten Kapitel</a>
             </li>
         </ul>
     </div>
 
     <h3>Beispiel 3: HTML-Tag Übersicht (Überschriften und Textausgabe mit p/span/pre)</h3>
-    <div>
+    <div id="intro-chapter">
         <h1>Ich bin die Hauptüberschrift der Seite</h1>
         <!-- Die h*-Tags gibt es von h1(wichtigste) bis h6(unwichtigste) -->
         <!-- Sie werden imm 'bold' 'fett geschrieben und je nach Zahl unterschidlich groß geschrieben -->
@@ -101,7 +116,7 @@
         </pre>
     </div>
     <h3>Beispiel 4: HTML-Tag Übersicht (p/blockquote/cite/address/small/bold/mark)</h3>
-    <div>
+    <div id="basic-output-chapter">
         <!-- InfoBox bei h3 Tag-->
         <h3 title="Tooltip ABC">Kleines Gimmick:</h3>
         <p title="Ich bin auch ein Tooltip">Man kann bei allen Elementen Tooltips mit dem title-Attribut vergeben</p>
@@ -143,7 +158,7 @@
         <mark>Ich werde gelb hinterlegt</mark>
 
     </div>
-    <div>
+    <div id="list-chapter">
         <h2>Listen in HTML</h2>
         <h3>Beispiel: Die ungeordnete Liste</h3>
         <p>Die ungeordnete Liste dient der Aufzählung von Stichpunkten, Vorbedingungen wobei alles ohne Gewichtung passiert</p>
@@ -163,14 +178,14 @@
         <p>Dient ebenfalls der Auflistung, diesmal allerdings von Einzelschritten oder von Rankings</p>
         <p>Das ol-Element darf entweder li-Elemente oder andere ol-Elmenete in sich enthalten</p>
 
-        <ol type="A" start="3" reversed>
+        <ol type="A" start="10" reversed>
             <li>Mehl</li>
             <li>Eier</li>
             <li>Milch</li>
             <li>Getränke
-                <ol>
+                <ol type="1" start="100">
                     <li>Cola
-                        <ol>
+                        <ol type="I">
                             <li>Light</li>
                             <li>Zero</li>
                         </ol>
@@ -214,7 +229,7 @@
         </dl>
     </div>
 
-    <div>
+    <div id="table-chapter">
         <h2>Tabelle in HTML</h2>
         <p>Sind in mehrere Teile aufgespalten</p>
         <p>Verwendete Tags:</p>
@@ -296,8 +311,10 @@
         <p>Moderen Alternative zum img-Tag ist der picture-Tag</p>
 
         <picture>
+            <source media="(min-width:1024px)" srcset="https://via.placeholder.com/1024x1024">
             <source media="(min-width:750px)" srcset="https://via.placeholder.com/750x750">
             <source media="(min-width:450px)" srcset="https://via.placeholder.com/450x450">
+            
             <img src="https://via.placeholder.com/250x250" alt="Text zu dem Bild">
         </picture>
 
@@ -307,7 +324,7 @@
         <p>Falls eines der Bilder in den Source-Tags nicht geladen werden kann, wird der alt-Text vom img-Tag dargestellt</p>
     </div>
 
-    <div>
+    <div id="media-chapter">
         <h2>Videos in HTML</h2>
         <p>Der video-Tag funktioniert recht ähnlich wie der picture-Tag. d.h. auch hier umschließt der Video-Tag mehrere Scource-Tags</p>
         <p>Diesmal definieren die source-Tags aber die Dateiendungen des Videos und der Brwoser nimmt sich das erste kompatible Format</p>

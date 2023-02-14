@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Beispiele</title>
+    <link rel="stylesheet" href="/stylesheets/myStyle.css">
+
+    <style>
+        /* Wir befinden uns hier im CSS */
+        /* Style gehören in eine CSS- Datei */
+        /* Somit können mehrere Seiten auf die selbe Styling zugreifen */
+        /* Wenn wir den <style> - Block im <head> verwenden, kann es vorkommen, 
+           das man bei selben Stylings auf mehreren doppelte Style-Definitionen hat (auf jeder Seite ein Style-Block mit selben CSS-Regel) */
+    </style>
+</head>
+<body>
+    <h1>CSS Beispiele</h1>
+
+
+    <h3 class="chapter-heading">1.) Ohne CSS-Beispiel:</h3>
+    <!-- Allgemeine CSS Regeln können durch Expliziete Styles ersetzt werden-->
+    <p style="color:aqua">Wenn wir keine CSS-Datei verwenden wollen, wäre es sogar möglich direkt im HTML, mit stylings zu arbeiten</p>
+    <p style="color:aqua">Der Nachteil besteht darin, dass wir bei mehrfacher Verwendung eines Stylings auch mehrfach die selbe Style-Definition an meheren Stellen verwenden</p>
+    
+    <h3 class="chapter-heading">2.)CSS-Beispiele</h3>
+    <p class="chapter-heading">(Achtung Anti-Beispiel): Bin keine Überschrift, aber nehme die selbe Regel, wie eine Überschrift: Ich bin dunkelblau und verwende Times New Roman</p>
+    <!-- hier wird das p in dunkelbau gefärbt -->
+    <p>Stylesheet werden meistens in einer CSS-Datei definiert und könnte in der kompletten Webseite verwendet werden</p>
+    <p>Um eine CSS-Datei zu laden, müssen wir im HTML-Document, im Head-Bereich die CSS-Datei mit dem Link-Befehl einbinden </p>
+
+    <h3>Ich bin ein h3 und keine Überschrift</h3>
+    <p id="first-paragraph">Bei den HTML - Elementen können wir das Attribute Id verwenden. Das soll eine Eindeutigkeit unter den HTML-Elementen auf einer Webseite sicherstellen</p>
+    <p id="second-paragraph">Id werden meistens bei HTML-Controls verwendet, meist in der Verbindung mit einem HTML-Formular</p>
+
+
+    <h2 class="chapter-heading">Tabellen</h2>
+</body>
+</html>
