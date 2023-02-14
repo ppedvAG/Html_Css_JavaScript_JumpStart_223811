@@ -68,6 +68,86 @@ h3 {
                             el#id {}
 */
 
+/* alle p und h2 tag bekommen einen Unterstrich */
+p + h2 {
+    text-decoration: underline;
+}
+
+h1 ~ h2 {
+    text-decoration: overline;
+    /* Überschreibt die Regel direkt darüber, da sie gleich spezifisch sind und somit die letzte definierte Regel gilt */
+}
+
+
+ul > li {
+    color:rgb(166, 163, 13);
+}
+
+
+h1.chapter-heading {
+    font-size: 42px;
+    color: rgb(202, 202, 159);
+}
+
+
+
+/* Größeneinheiten in CSS */
+
+/* Absolute Einheiten */
+/* 
+    px, Pixel 1/96 inch
+    in, Inch ca 2,5 cm
+    pt, Point 1/72 inch
+    pc, Pica entspricht 12pt
+    mm, milimeter
+    cm, centimeter
+    Werden nicht mehr so häufig verwendet, da sie immer die selbe Größe haben
+*/
+
+/* Relative Einheiten */
+/* 
+    em, element Relativ zur Schriftgröße des Elements, d.h. 2em entsprechen der doppelten Schriftgröße des Elements
+    rem, Relativ zur Schriftgröße des root-Elements (html)
+    vw, Relativ zu 1% der breite des Viewports (Browserfensters)
+    vh, Relativ zu 1% der höhe des Viewports (Browserfenster)
+    vmin, Relativ zu 1% der kleiner Seite des Viewports
+    vmax, Relativ zu 1% der größeren Seite des Viewports
+    %, Relativ zur Größe des Elternelementes
+    ch, Relativ zur Breite der 0 der ausgewählten Schriftart
+    ex, Relativ zur Höhe der x-Achse des BUchstabens A in der derzeitigen Schriftart
+*/
+
+/* 
+    Das Box-Modell
+    Von innen nach außen in mehrere Unterblöcke aufgeteilt:
+        Content- der tatsächliche Inhalt z.B. Text oder Bild des Elements
+            Größe des Contents kann mit height und width angepasst werden
+        Padding - transparenter Abstand ziwschen Content und Border wird mit setzen von backgroundcolor eingefärbt => zählt als Teil des Elements
+        Border - Grenze um das Padding kann beliebig gefärbt und breite der Balken angepasst werden
+        Margin - Transparente Rand um die Border herum, dieser wird nicht von background-color eingefärbt
+*/
+
+div#box {
+    height: 50px;
+    background-color: aquamarine;
+    padding: 20px;
+}
+
+
+
+.outer-div {
+    height: 500px;
+    padding: 50px 50px 50px 50px;
+    background-color: midnightblue;
+}
+
+.inner-div {
+    height: 50px;
+    background-color: gold;
+    margin-top: 20px;
+}
+
+
 
 
 
