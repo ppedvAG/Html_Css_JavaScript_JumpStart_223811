@@ -142,6 +142,20 @@ y = 12;
     var block2 = "Bye!";
     console.log("Innerhalb von Code-Block: " + block1);
 }
+
+if (x === 15){
+    //CodeBlock und definiert durch zwei geschweifte Klammern 
+    //Die let - Variable gilt nur in dem If-Statement
+    y = 123;
+    console.log(y);
+    let eineLetVariable = 123;
+}
+
+
+function divide(numOne = 1, numTwo = 1) {
+   let abc = "abc"; // gilt nur innerhalb der Funktion
+} //let Variablen werden beim Verlassen der Methode aufgeräumt
+
 console.log(block1); // Hier scheitert der aufruf, da block1 nur innerhalb des blockes von Zeile 137 bis 141 bekannt ist
 // Uncaught ReferenceError: block1 is not defined <anonymous> http://127.0.0.1:5500/scripts/jsIntro.js:145
 console.log(block2); // Das funktioniert, da var den Blockscope nicht kennt 

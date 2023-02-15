@@ -128,6 +128,18 @@ if (myNumber === "123")
 
 
 
+function isEven(number) {
+    if (number % 2 === 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function isEven(number) {
+    return number % 2 === 0; //ergebnis true oder false
+}
 
 
 
@@ -141,6 +153,10 @@ let day = "freitag";
 let output = day == "freitag" ? "Wochenende" : "Kein Wochenende";
 console.log(output);
 
+// isEven mit Ternary:
+function isEven(number) {
+    return (number % 2 === 0) ? true : false;
+}
 
 
 // switch-Case
@@ -238,5 +254,135 @@ function clock() {
         }
     }
 }
-
 clock();
+
+for (let number1 = 1; number1 <= 10; number1++){
+    for (let number2 = 1; number2 <= 10; number2++){
+        console.log(`${number1} x ${number2} = ${number1 * number2}`);
+    }
+}
+
+
+
+
+
+// Übung2: FizzBuzz
+// Jede Zahl die nur durch 3 teilbar ist wird mit Fizz betitelt
+// Jede Zahl die nur durch 5 teilbar ist wird mit Buzzz betitelt
+// Zahlen die sowohl durch 3 als auch 5 teilbar sind werden mit FizzBuzz betitelt
+// Alle anderen Zahlen werden normal ausgegeben
+// Wir wollen nun eine Funktion schreiben, die eine Obergrenze übergeben bekommt bis zu der gezählt werden soll
+// und jede dieser Zahlen soll dann auf ihre Teilbarkeit durch 3 und 5 geprüft werden und nach den obigen Regeln in der Konsole ausgegeben werden
+
+
+// do..while Schleife
+/* Syntax:
+    let zähler;
+    do {
+        code-Block
+        inkrement
+    }
+    while(Bedingung)
+*/
+
+let counter = 20;
+do {
+    console.log(counter);
+    counter++;
+}
+while(counter < numberOne);
+
+
+
+// break & continue
+
+for (let i = 0; i < 11; i++) {
+    if (i % 2 === 0) {
+        console.log("Iteration wird übersprungen");
+        continue;
+        // Überspringt die derzeitige iteration des Blockes, aber führt das inkrementieren/dekrementieren aus
+    }
+    else if (i === 7) {
+        console.log("Schleife wird beendet");
+        break;
+        // beendet die derzeitige Schleife vorzeitig
+    }
+    console.log(i); //1 3 5
+}
+
+//Übung 3: 
+// Schreibe eine Funktion die das gesamte kleine ein mal eins ausführt
+// Es soll kein Wert zurückgeben werden, sondern die Berechnungen sollen direkt in der Konsole angezeigt werden
+
+
+// Erwartete Output:
+// 1er Einmaleins:
+// 1 x 1 = 1
+// 1 x 10 = 10
+// 2er Einmaleins:
+// 2 x 1 = 2
+// 2 x 10 = 20
+
+
+
+// Rekursiven Funktionen
+// Funktionen, die sich in ihrem Körper selbst aufrufen
+// Müssen immer eine BEdingung enthalten, damit es keine endlos Schleife wird
+// Können schnell inneffizient werden, da es viele Funktionsaufrufe sind
+
+function faculty(limit) {
+    if (limit < 2) {
+        return 1;
+    }
+    else {
+        return limit * faculty(limit - 1);
+    }
+}
+
+
+
+// Lambda-Funktionen:
+// Alternativen zu den anonymen Funktionen
+
+// Anonyme Funkten sind Funktionen ohne identifier
+// Weißt man im normalfall einer Variable zu, damit sie wiederverwendbar sind
+// Einfache anonyme Funktion
+
+let sum = function (numOne, numTwo) {return numOne + numTwo}
+
+let ergebnis3 = sum(8,9); 
+
+
+// Sind identisch zu normalen Funktionen
+
+// Lambdas sind die kompakte Alternative zu den anonymen Funktionen
+// Pfeilfunktionen
+
+let quatrat = (a) => a*4;
+
+let square = (a) => a*a;
+console.log(square(13));
+
+
+//So werden die beiden Beispiel als Funktionen aussehen
+
+function vervierfachen (a) {
+    return a * 4;
+}
+
+function quadrieren (a) {
+    return a * a;
+}
+
+
+// Lambdas werden meistens als Parameter für andere Funktionen benutzt 
+
+// wenn eine Lambda Funktion mehrzeilig wird, verliert sie einige ihrer Vorteile
+
+let mehrzeilig = (a,b) => {
+    a *=2;
+    b *= 2;
+    return a*b;
+}
+
+// Wir brauchen dann wieder die geschweiften Klammern und das return Keyword
