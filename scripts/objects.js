@@ -285,7 +285,16 @@ console.log(array2);
 function highestNumberInArray(arr) {
     let highestNum = 0;
 
-    //ermittelung der höchsten Nummer muss programmiert werden
+    //Gehen durch jede Zahl und prüfen gegenüber highestNum ob die Zahl höher ist, wenn ja, wird arr[i] der highestNum zugewiesen 
+    for (let i = 0; i < arr.length; i++) {
+        //...hier schreibst du deinen Quellcode
+    
+        if (highestNum < arr[i]){
+            highestNum = arr[i];
+        }
+           
+    }
+    
 
     return highestNum;
 }
@@ -293,3 +302,193 @@ function highestNumberInArray(arr) {
 
 const testarray = [10, 12, 17, 22, 44, 65];
 let highestNumber = highestNumberInArray(testarray);
+
+
+//MATH - Object
+
+// Rundungsfunktionen
+// Math.round(number) => Rundet auf die nächste Ganzzahl
+// Kaufmännische runden (Beispiel: 2.5 => 3 / 2.4 => 2)
+
+console.log(Math.round(2.5), Math.round(2.4)); //Ausgabe 3 2
+
+// Math.ceil(number) => Rundet auf nächsthöhere oder gleiche Ganzzahl
+console.log(Math.ceil(2.1), Math.round(3.0)); //Ausgabe: 3 3
+
+
+// Math.floor(number) => rundet auf die nächst niedrigere oder gleiche Ganzzahl
+console.log(Math.floor(2.99), Math.floor(2.0)); // 2 2 
+
+
+
+// Math.pow(x,y) => x^y
+console.log(Math.pow(2, 4)); //(2*2*2*2) => 16 
+
+// Math.sqrt(number) => Quadratwurzel von number
+console.log(Math.sqrt(16)); // => 4 
+
+
+// Math.abs(number) => Gibt Betrag von number zurück
+console.log(Math.abs(-5), Math.abs(12)); // 5 12
+
+// Math.min()
+// Math.max()
+// Gibt uns jeweils die höchste bzw kleinste der übergebenen Zahlen zurück
+console.log(Math.min(12, 8, -1), Math.max(100, 50, 230)); // -1 230
+// Akzeptiert keine Arrays als Input
+
+
+
+//Math.random() zwischen 0 und 0.99999999
+
+//maxNum soll angeben, was die höchste Zufallszahl sein soll 
+function ZufallszahlenGenerator(maxNum) {
+    let zufallzahl = Math.random() * maxNum;
+    console.log("Zufallszahl (rau): " + zufallzahl);
+    
+    let gerundeteZufallszahl = Math.floor(zufallzahl) +1;
+    console.log("gerundete Zufallszahl: " + gerundeteZufallszahl);
+    return gerundeteZufallszahl;
+}
+
+function randomNumberGenerator(maxNum) {
+    return Math.floor((Math.random() * maxNum) + 1);
+    // Generiert zufällige Zahlen zwischen 1 und maxNum
+}
+
+
+//Number
+
+// Erlaubt es uns Strings in Zahlen umzuwandeln
+// Und zusätzlich lässt es uns einige Randbedingungen prüfen
+
+
+//NUMBER-PRÜFUNGEN 
+// Number.isNaN(variable)
+// Gibt einfach true oder false zurück jenachdem ob NaN übergeben wurde
+
+function typeOfNaN(x) {
+    if (Number.isNaN(x)) {
+      return 'Number NaN';
+    }
+    if (isNaN(x)) {
+      return 'NaN';
+    }
+  }
+  
+  console.log(typeOfNaN('100F'));
+  // Expected output: "NaN"
+  
+  console.log(typeOfNaN(NaN));
+  // Expected output: "Number NaN"
+
+// Number.isFinite(number)
+// Prüft ob die Zahl endlich ist
+console.log(Number.isFinite(1 / 0));
+// Expected output: false
+
+console.log(Number.isFinite(10 / 5));
+// Expected output: true
+
+console.log(Number.isFinite(0 / 0));
+// Expected output: false
+
+// Number.isInteger(number)
+// Prüft ob die Zahl ganzzahlig ist
+
+function fits(x, y) {
+    if (Number.isInteger(y / x)) {
+      return 'Fits!';
+    }
+    return 'Does NOT fit!';
+  }
+  
+  console.log(fits(5, 10));
+  // Expected output: "Fits!"
+  
+  console.log(fits(5, 11));
+  // Expected output: "Does NOT fit!"
+
+
+
+  //PARSEN 
+// Number.parseFloat(variable)
+// Gibt die Eingabe als Gleitkommzahl zurück
+
+// Number.parseInt(Variable)
+// Gibt die Zahl als Ganzzahl zurück
+
+// Falls die Zahl nicht umgewandelt werden kann wird NaN zurückgegeben
+// Seperator muss ein . sein, ansonten wird alles danach abgetrennt
+// Wenn eine Textfolge mit einer Zahl beginnt wird die Zahl erfolgreich umgewandelt und der Text abgetrennt
+// Falls die Zeichenfolge mit Text beginnt und Zahlen enthält wird NaN zurückgegebn
+
+
+//Number.parseInt ->Beispiel:
+
+function roughScale(x, base) {
+    const parsed = Number.parseInt(x, base);
+    console.log(parsed);
+    if (Number.isNaN(parsed)) {
+      return 0;
+    }
+    return parsed * 100;
+  }
+  
+  console.log(roughScale('0xF', 16));
+  // Expected output: 1500
+  
+  console.log(roughScale("321", 2));
+  // Expected output: 0
+
+
+//Date-Object
+// Zählt intern mit ms, die seit dem 01.01.1970 vergangen sind
+
+
+let today = new Date();  // Gibt das heutige Datum inklusive Timezone zurück
+
+let trialDate = new Date(2022); //01.01.2022
+let trialDate2 = new Date(2022, 6); // 01.07.2022
+// Monat beginnt bei 0
+
+// Mittels Datumstring:
+let trialDate3 = new Date("07-05-2022"); // 05.07.2022
+// yyyy-MM-dd klappt in jedem Browser
+// MM-dd-yyyy klappt in chrome, aber nicht in firefox
+
+
+
+// Methoden mit get und set
+// Jahr
+trialDate.getFullYear(); // => Jahr als vierstellige Zahl
+trialDate.setFullYear(2021); // Ändert das Jahr auf 2021
+// Monat
+trialDate.getMonth(); // => Monat zwischen 0 und 11 (0 = Januar)
+
+// Tag
+trialDate.getDate(); // => Tag zwischen 1 und 31
+
+// Stunden
+trialDate.getHours(); // => Stunden zwischen 0 und 23 
+
+// Minuten
+trialDate.getMinutes(); // => Minuten zwischen 0 und 59
+
+// Sekunden
+trialDate.getSeconds(); // => Sekunden zwischen 0 und 59
+
+
+
+// Millisekunden
+trialDate.getMilliseconds(); // Millisekunden zwischen 0 999
+trialDate.getTime(); // => Milisekunden seit 01.01.1970
+
+// Ohne set
+
+// Wochentag
+trialDate.getDay(); // => Gibt uns eine Zahl zwischen 0 und 6
+// Sonntag = 0 | Samstag = 6
+
+// Date.now()
+Date.now(); // Gibt das derzeitige Datum als ms seit dem 01.01.1970 zurück
