@@ -230,5 +230,66 @@ console.log("nach Pop-Befehl")
 console.table(numberArray);
 
 
+//Alternativ  -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+//PUSH: fügt einen Eintrag am Ende der Liste hinzu
+const animals = ['pigs', 'cat', 'sheep'];
+
+const count = animals.push('cows');
+console.log(count);
+// Expected output: 4
+console.table(animals);
+// Expected output: Array ["pigs", "goats", "sheep", "cows"]
 
 
+
+
+//POP: nimmt den letzten Eintrag in der Liste weg
+const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+console.log(plants.pop());
+// Expected output: "tomato"
+
+console.log(plants);
+// Expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+
+
+//SHIFT (Nimmt am Anfang weg)
+
+const array1 = [1, 2, 3];
+
+const firstElement = array1.shift();
+
+console.log(array1);
+console.table(array1);
+// Expected output: Array [2, 3]
+
+
+//UNSHIFT (Fügt am Anfang hinzu)
+const array2 = [1, 2, 3];
+
+console.log(array2.unshift(4, 5));
+// Expected output: 5
+
+console.log(array2);
+// Expected output: Array [4, 5, 1, 2, 3]
+
+
+
+
+// Übung:
+// Erstelle eine Funktion, die ein beliebig langes Array aus Zahlen erhalten kann 
+// und uns dann nur die höchste Zahl aus dem Array zurückgibt
+
+function highestNumberInArray(arr) {
+    let highestNum = 0;
+
+    //ermittelung der höchsten Nummer muss programmiert werden
+
+    return highestNum;
+}
+
+
+const testarray = [10, 12, 17, 22, 44, 65];
+let highestNumber = highestNumberInArray(testarray);
